@@ -39,7 +39,6 @@ Thumbs.db
 # Reports
 *.xml
 *.html
-*.json
 
 # IDE
 .idea/
