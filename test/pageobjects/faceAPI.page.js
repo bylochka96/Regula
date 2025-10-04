@@ -12,10 +12,17 @@ class FacePage extends Page {
         return this.cookieBannerContainer.$('//button[text()=" Accept all cookies "]')
     }
 
-     async acceptedAllCookies (){
-        await this.acceptAllCookiesBtn.click();
-        expect(this.cookieBannerContainer.isDisplayed()).toBeFalse();
+    async checkAndColapseCookieBaner (){
+    const cookieBannerContainer = await this.cookieBannerContainer;
+    let isCookieBannerContainerDisplayed = await cookieBannerContainer.isDisplayed({ withinViewport: true });
+    this.logger({MESSAGE: `FacePage.checkAndColapseCookieBaner(): isCookieBannerContainerDisplayed = ${isCookieBannerContainerDisplayed}`})
+    if(isCookieBannerContainerDisplayed){
+        const acceptAllCookiesBtn = await this.acceptAllCookiesBtn;
+        await acceptAllCookiesBtn.click();
+        isCookieBannerContainerDisplayed = await cookieBannerContainer.isDisplayed({ withinViewport: true });
     }
+    expect(isCookieBannerContainerDisplayed).toBe(false);
+    };
     //End of Cookie Banner
 
     //Form "Let's Talk Business" locators

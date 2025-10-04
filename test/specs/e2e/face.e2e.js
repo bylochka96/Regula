@@ -7,13 +7,13 @@ describe('FaceAPI E2E suite: ', () => {
         await FacePage.open()
         await FacePage.logger({ MESSAGE: " 1st one" })
 
-
-        await FacePage.acceptedAllCookies();
+        await FacePage.checkAndColapseCookieBaner()
 
         let firstNameInpuit = await FacePage.firstNameFieldInput;
         firstNameInpuit.scrollIntoView();
+        let isfirstNameInpuitDisplayed = await firstNameInpuit.isDisplayed({ withinViewport: true });
+        expect(isfirstNameInpuitDisplayed).toBe(true);
         await browser.pause(5*1000)
-        expect(firstNameInpuit.isClicable()).toBeTruthy;
 
 
     })
