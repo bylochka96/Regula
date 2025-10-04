@@ -18,7 +18,7 @@ class FacePage extends Page {
     }
     //End of Cookie Banner
 
-    //Form "Let's Talk Buisiness" locators
+    //Form "Let's Talk Business" locators
     get firstNameFieldInput () {
         return $('//h2[text()="Let\'s Talk Business"]/..//label/span[text()="First name"]/../..//input')
     }
