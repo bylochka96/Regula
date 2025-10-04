@@ -8,7 +8,7 @@ describe('FaceAPI E2E suite: ', () => {
         await FacePage.logger({ MESSAGE: " 1st one" })
 
 
-        await FacePage.accceptedAllCookies();
+        await FacePage.acceptedAllCookies();
 
         let firstNameInpuit = await FacePage.firstNameFieldInput;
         firstNameInpuit.scrollIntoView();

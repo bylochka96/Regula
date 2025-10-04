@@ -12,7 +12,7 @@ class FacePage extends Page {
         return this.cookieBannerContainer.$('//button[text()=" Accept all cookies "]')
     }
 
-     async accceptedAllCookies (){
+     async acceptedAllCookies (){
         await this.acceptAllCookiesBtn.click();
         expect(this.cookieBannerContainer.isDisplayed()).toBeFalse();
     }
