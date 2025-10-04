@@ -8,12 +8,18 @@ logger.level = process.env.LOG_LEVEL || 'info';
 //allureWrapper import
 import AllureWrapper from "./../../utils/allureWrapper"
 
-
 export default class Page {
- 
+
     constructor(){
+
     }
 
+    /**
+    * Method for logs
+    * @param {object} obj Additional properties may be required
+    * @param obj.MESSAGE - message for log, typeof - String
+    * @param obj.LOG_LEVEL - level of log, typeof - String
+    */
     async logger(obj){
         if (obj.LOG_LEVEL === undefined) { obj.LOG_LEVEL = 'info' }
         switch (obj.LOG_LEVEL) {

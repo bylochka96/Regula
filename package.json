@@ -10,8 +10,8 @@
     "log4js": "^6.9.1"
   },
   "scripts": {
-    "testRegula": "set TEST_SUITE=all&& wdio run ./wdio.conf.js",
-    "testRegula:e2e": "set TEST_SUITE=e2e&& wdio run ./wdio.conf.js",
+    "regula": "set TEST_SUITE=all&& wdio run ./wdio.conf.js",
+    "regula:e2e": "set TEST_SUITE=e2e&& wdio run ./wdio.conf.js",
     "allure:generate": "allure generate ./allure-results --clean -o ./allure-report",
     "allure:open": "allure open ./allure-report"
   }
