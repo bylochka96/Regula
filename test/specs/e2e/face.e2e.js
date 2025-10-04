@@ -4,23 +4,23 @@ import FacePage from '../../pageobjects/faceAPI.page.js'
 describe('FaceAPI E2E suite: ', () => {
     
     fit('should load FaceAPI root and show content', async () => {
-        await FacePage.open()
-        await FacePage.logger({ MESSAGE: " 1st one" })
+        await FacePage.open();
+        await FacePage.logger({ MESSAGE: " 1st one" });
 
-        await FacePage.checkAndColapseCookieBaner()
+        await FacePage.checkAndColapseCookieBaner();
 
         let firstNameInpuit = await FacePage.firstNameFieldInput;
         firstNameInpuit.scrollIntoView();
         let isfirstNameInpuitDisplayed = await firstNameInpuit.isDisplayed({ withinViewport: true });
         expect(isfirstNameInpuitDisplayed).toBe(true);
-        await browser.pause(5*1000)
+        await browser.pause(5*1000);
 
 
     })
 
     it('2nd one', async () => {
-        await FacePage.open()
-        await FacePage.logger({ MESSAGE: "2nd one", LOG_LEVEL: "debug"  })
+        await FacePage.open();
+        await FacePage.logger({ MESSAGE: "2nd one", LOG_LEVEL: "debug"  });
     })
 
 })
